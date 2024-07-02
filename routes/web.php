@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProductDetailsController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\User\OrderController;
 use App\Models\Category;
@@ -48,25 +49,25 @@ Route::middleware('guest')->group(function(){
 Route::middleware('auth')->group(function(){
 
     // email verification
-    Route::get('/verify-email', function (Request $request) {
+    // Route::get('/verify-email', function (Request $request) {
 
-        return $request->user()->hasVerifiedEmail()
-        ? redirect()->intended(RouteServiceProvider::HOME)
-        : view('auth.verify-email');
+    //     return $request->user()->hasVerifiedEmail()
+    //     ? redirect()->intended(RouteServiceProvider::HOME)
+    //     : view('auth.verify-email');
 
-    })->name('verification.notice');
+    // })->name('verification.notice');
 
-    Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-                ->middleware('throttle:6,1')
-                ->name('verification.send');
+    // Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
+    //             ->middleware('throttle:6,1')
+    //             ->name('verification.send');
 
-    Route::get('/verify-email/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
-                ->middleware(['signed', 'throttle:6,1'])
-                 ->name('verification.verify');
+    // Route::get('/verify-email/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
+    //             ->middleware(['signed', 'throttle:6,1'])
+    //              ->name('verification.verify');
 
 
     // Admin routes
-    Route::middleware('admin')->name('admin.')->prefix('admin')->group(function(){
+    Route::middleware(['auth', 'role:admin',])->name('admin.')->prefix('admin')->group(function(){
 
         Route::get('/dashboard', DashboardController::class)->name('dashboard');    
         Route::resource('transactions', TransactionController::class)->only(['index', 'update']);
@@ -84,18 +85,18 @@ Route::middleware('auth')->group(function(){
         Route::resource('orders', AdminOrderController::class)->only(['index', 'show', 'update']);
 
     });
-
+    
     Route::name('user.')->prefix('user')->group(function(){
 
-        Route::view('/profile', 'user.profile')->name('profile');
-        Route::post('/profile', function(){ return "This feature is under maintance mode"; });
+        Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+        Route::put('/profile', [ProfileController::class, 'update']);
         Route::resource('orders', OrderController::class)->only(['index', 'show', 'update']);
         Route::view('/ship_info', 'user.ship_info')->name('ship_info');
         Route::view('/setting', 'user.setting')->name('setting');
 
     });
     
-    Route::middleware('verified')->group(function(){
+    Route::middleware('auth')->group(function(){
 
         Route::get('/checkout', [CheckoutController::class, 'showForm'])->name('checkout');
         Route::post('/checkout', [CheckoutController::class, 'createOrder'])->name('checkout');

@@ -22,6 +22,16 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin123'),
             'email_verified_at' => now(),
+            'role' => 'admin',
+            'admin' => 1
+        ]);
+        User::create([
+            'first_name' => 'charles',
+            'last_name' => 'staff',
+            'email' => 'staff@gmail.com',
+            'password' => Hash::make('staff123'),
+            'email_verified_at' => now(),
+            'role' => 'staff',
             'admin' => 1
         ]);
 
@@ -31,6 +41,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'john@gmail.com',
             'password' => Hash::make('john123'),
             'email_verified_at' => now(),
+            'role' => 'customer',
         ]);
 
         $this->call([

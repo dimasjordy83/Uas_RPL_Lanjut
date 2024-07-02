@@ -15,16 +15,13 @@ class VerifyEmailController extends Controller
      * @param  \Illuminate\Foundation\Auth\EmailVerificationRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function __invoke(EmailVerificationRequest $request)
+    public function __invoke($request)
     {
-        if ($request->user()->hasVerifiedEmail()) {
-            return "<h1 style='color: rgb(32, 221, 32);text-align: center;' >Email Already Verified ! <a href='".route('login')."'>(Login)</a></h1>";
-        }
 
-        if ($request->user()->markEmailAsVerified()) {
-            event(new Verified($request->user()));
-        }
 
-        return "<h1 style='color: rgb(32, 221, 32);text-align: center;' >Email Verified ! <a href='".route('login')."'>(Login)</a></h1>";
+        // event(new Verified($request->user()));
+
+
+        return "<h1 style='color: rgb(32, 221, 32);text-align: center;' >Email Verified ! <a href='" . route('login') . "'>(Login)</a></h1>";
     }
 }

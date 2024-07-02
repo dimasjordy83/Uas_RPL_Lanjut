@@ -35,7 +35,7 @@
         <span class="ham material-icons">menu</span>
         <a id="nav_logo" class="d-b" href="#"><img class="fit_img" src="{{ asset('img/b.png') }}" alt="logo"></a>
         <div class="nav_admin">
-            <img class="fit_img admin_img" src="{{ asset('storage/avatar/admin.jpg'); }}" alt="admin_img">
+            <a href="{{ route('user.profile') }}"><img class="fit_img admin_img" src="{{ asset('storage/avatar/admin.jpg'); }}" alt="admin_img"></a>
         </div>
     </nav>
 

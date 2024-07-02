@@ -20,7 +20,7 @@ class AdminAccountController extends Controller
         $validated = $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
-            'mobile' => 'size:10',
+            'mobile' => 'max:15',
             'intro' => 'max:255',
         ]);
 

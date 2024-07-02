@@ -29,7 +29,7 @@
     <section style="margin-top: 1.5rem;" class="_container">
         <aside>
             <div class="profile_details">
-                <img class="d-b" src="{{ asset('storage/avatar/admin.jpg') }}" alt="user">
+                <img class="d-b" src="{{ auth()->user()->image ? asset('storage/' . auth()->user()->image) : asset('storage/avatar/admin.jpg') }}" alt="user">
                 <div class="cloak">
                     <h2 class="m-0">{{ auth()->user()->full_name }}</h2>
                     <p class="m-0">{{ auth()->user()->email }}</p>
@@ -37,18 +37,23 @@
             </div>
             
             @if (auth()->user()->admin)
-                <a style="color: blue; margin-top:1em" class="d-b" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                <a href="{{ route('admin.dashboard') }}"><button onclick="" style="color: black; margin-top:1em" class="d-b cloak">Dashboard</button></a>
             @else
                 <button onclick="toggleForm()" class="cloak">Edit profile</button>
             @endif
 
             <!-- form -->
-            <form class="cloak hide" action="{{ route('user.profile') }}" method="post">
+            <form class="cloak hide" action="{{ route('user.profile') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                Name <br>
-                <input class="input_text" type="text" name="" id=""><br>
+                @method('PUT') 
+                Foto Profile<br>
+                <input type="file" name="profile_image"><br>
+                First Name <br>
+                <input class="input_text" type="text" name="first_name" id="first_name" value="{{ old('first_name', auth()->user()->first_name) }}" required><br>
+                Last Name <br>
+                <input class="input_text" type="text" name="last_name" id="last_name" value="{{ old('last_name', auth()->user()->last_name) }}" required><br>
                 Intro <br>
-                <textarea class="input_text"></textarea>
+                <textarea class="input_text" name="intro" value="" required>{{ old('intro', auth()->user()->intro) }}</textarea>
 
                 <input type="submit" value="Save">
                 <input onclick="toggleForm()" type="button" value="Cancel">

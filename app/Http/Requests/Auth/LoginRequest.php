@@ -31,7 +31,7 @@ class LoginRequest extends FormRequest
     {
 
         // no "remember me" and "rate limitime" functionality for now
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+        if (!Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
 
             throw ValidationException::withMessages([
                 'email' => __('auth.failed'),

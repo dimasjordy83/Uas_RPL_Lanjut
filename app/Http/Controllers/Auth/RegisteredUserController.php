@@ -34,6 +34,7 @@ class RegisteredUserController extends Controller
             'last_name' => $validated['last_name'],
             'email' => $validated['email'],
             'password' => Hash::make($request->password),
+            'role' => 'customer'
         ]);
 
         try{
