@@ -36,7 +36,7 @@
                 </div>
             </div>
             
-            @if (auth()->user()->admin)
+            @if (auth()->user()->role == 'admin' || auth()->user()->role == 'vendor')
                 <a href="{{ route('admin.dashboard') }}"><button onclick="" style="color: black; margin-top:1em" class="d-b cloak">Dashboard</button></a>
             @else
                 <button onclick="toggleForm()" class="cloak">Edit profile</button>
@@ -53,7 +53,7 @@
                 Last Name <br>
                 <input class="input_text" type="text" name="last_name" id="last_name" value="{{ old('last_name', auth()->user()->last_name) }}" required><br>
                 Intro <br>
-                <textarea class="input_text" name="intro" value="" required>{{ old('intro', auth()->user()->intro) }}</textarea>
+                <textarea class="input_text" name="intro" value="">{{ old('intro', auth()->user()->intro) }}</textarea>
 
                 <input type="submit" value="Save">
                 <input onclick="toggleForm()" type="button" value="Cancel">

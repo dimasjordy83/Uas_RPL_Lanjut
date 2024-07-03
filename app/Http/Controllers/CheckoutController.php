@@ -78,12 +78,12 @@ class CheckoutController extends Controller
         $userCart->status = 'C';
         $userCart->save();
 
-        try{
-            Mail::to($order->email)->send(new OrderShipped($order));
-        }
-        catch(\Exception $e){
-            dd($e);
-        }
+        // try{
+        //     Mail::to($order->email)->send(new OrderShipped($order));
+        // }
+        // catch(\Exception $e){
+        //     dd($e);
+        // }
         return view('thanks');
 
     }

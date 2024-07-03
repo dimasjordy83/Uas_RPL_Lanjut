@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class AdminAccountController extends Controller
 {
@@ -22,6 +23,8 @@ class AdminAccountController extends Controller
             'last_name' => 'required',
             'mobile' => 'max:15',
             'intro' => 'max:255',
+            'profile_image' => ['image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+
         ]);
 
         $user = User::find(Auth::user()->id);
@@ -35,6 +38,17 @@ class AdminAccountController extends Controller
         $request->whenHas('intro', function ($input) use ($user){
             $user->intro = $input;
         });
+        if ($request->hasFile('profile_image')) {
+            $imagePath = $request->file('profile_image')->store('avatars', 'public');
+
+            // Hapus gambar lama jika ada
+            if ($user->image) {
+                Storage::disk('public')->delete($user->image);
+            }
+
+            // Update path gambar di user model
+            $user->image = $imagePath;
+        }
        
         $user->save();
 

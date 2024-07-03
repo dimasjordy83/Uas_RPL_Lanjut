@@ -27,11 +27,11 @@ class DatabaseSeeder extends Seeder
         ]);
         User::create([
             'first_name' => 'charles',
-            'last_name' => 'staff',
-            'email' => 'staff@gmail.com',
-            'password' => Hash::make('staff123'),
+            'last_name' => 'vendor',
+            'email' => 'vendor@gmail.com',
+            'password' => Hash::make('vendor123'),
             'email_verified_at' => now(),
-            'role' => 'staff',
+            'role' => 'vendor',
             'admin' => 1
         ]);
 

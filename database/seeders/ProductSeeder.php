@@ -21,7 +21,8 @@ class ProductSeeder extends Seeder
             "price" => rand(10, 99),
             "stock_quantity" => rand(2, 15),
             "discount" => rand(1, 16) * 5,
-            "category_id" => 1
+            "category_id" => 1,
+            "user_id" => 1
         ]);
 
         Product::create([
@@ -31,7 +32,8 @@ class ProductSeeder extends Seeder
             "price" => rand(10, 99),
             "stock_quantity" => rand(2, 15),
             "discount" => rand(1, 16) * 5,
-            "category_id" => 1
+            "category_id" => 1,
+            "user_id" => 1
         ]);
 
         Product::create([
@@ -41,7 +43,8 @@ class ProductSeeder extends Seeder
             "price" => rand(10, 99),
             "stock_quantity" => rand(2, 15),
             "discount" => rand(1, 16) * 5,
-            "category_id" => 2
+            "category_id" => 2,
+            "user_id" => 1
         ]);
 
         Product::create([
@@ -51,7 +54,8 @@ class ProductSeeder extends Seeder
             "price" => rand(10, 99),
             "stock_quantity" => rand(2, 15),
             "discount" => rand(1, 16) * 5,
-            "category_id" => 3
+            "category_id" => 3,
+            "user_id" => 1
         ]);
 
         Product::create([
@@ -61,7 +65,8 @@ class ProductSeeder extends Seeder
             "price" => rand(10, 99),
             "stock_quantity" => rand(2, 15),
             "discount" => rand(1, 16) * 5,
-            "category_id" => 2
+            "category_id" => 2,
+            "user_id" => 1
         ]);
 
         Product::create([
@@ -71,7 +76,8 @@ class ProductSeeder extends Seeder
             "price" => rand(10, 99),
             "stock_quantity" => rand(2, 15),
             "discount" => rand(1, 16) * 5,
-            "category_id" => 3
+            "category_id" => 3,
+            "user_id" => 1
         ]);
 
         Product::create([
@@ -81,7 +87,8 @@ class ProductSeeder extends Seeder
             "price" => rand(10, 99),
             "stock_quantity" => rand(2, 15),
             "discount" => rand(1, 16) * 5,
-            "category_id" => 4
+            "category_id" => 4,
+            "user_id" => 1
         ]);
 
         Product::create([
@@ -91,7 +98,8 @@ class ProductSeeder extends Seeder
             "price" => rand(10, 99),
             "stock_quantity" => rand(2, 15),
             "discount" => rand(1, 16) * 5,
-            "category_id" => 4
+            "category_id" => 4,
+            "user_id" => 1
         ]);
 
         Product::create([
@@ -101,7 +109,8 @@ class ProductSeeder extends Seeder
             "price" => rand(10, 99),
             "stock_quantity" => rand(2, 15),
             "discount" => rand(1, 16) * 5,
-            "category_id" => 5
+            "category_id" => 5,
+            "user_id" => 1
         ]);
 
         Product::create([
@@ -111,7 +120,8 @@ class ProductSeeder extends Seeder
             "price" => rand(10, 99),
             "stock_quantity" => rand(2, 15),
             "discount" => rand(1, 16) * 5,
-            "category_id" => 5
+            "category_id" => 5,
+            "user_id" => 1
         ]);
 
         Product::create([
@@ -121,7 +131,8 @@ class ProductSeeder extends Seeder
             "price" => rand(10, 99),
             "stock_quantity" => rand(2, 15),
             "discount" => rand(1, 16) * 5,
-            "category_id" => 3
+            "category_id" => 3,
+            "user_id" => 1
         ]);
 
     }

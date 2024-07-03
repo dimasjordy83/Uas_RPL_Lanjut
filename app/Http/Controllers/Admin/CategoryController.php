@@ -31,11 +31,12 @@ class CategoryController extends Controller
         // validation
         $validated = $request->validate([
             'title' => 'required|max:255',
-            'image' => 'required|image|max:50'//not more than 50 kilobytes
+            'image' => 'required|image|max:1024'//not more than 50 kilobytes
         ]);
         
         // storing in database, take request parameter from the $validated, and not from the $request.
-        $path = Storage::putFile('categories', $validated['image']);
+        $path = $request->file('image')->store('categories', 'public');
+
         $category = new Category();
         $category->title = $validated['title'];
         $category->image = $path;
@@ -60,14 +61,17 @@ class CategoryController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|max:255',
-            'image' => 'image|max:50'//not more than 50 kilobytes
+            'image' => 'image|max:1024'//not more than 50 kilobytes
         ]);
 
-        $request->whenHas('image', function ($input) use ($category){
-            Storage::delete($category->image);
-            $path = Storage::putFile('categories', $input);
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('categories', 'public');
+            if ($category->image) {
+                Storage::delete($category->image);
+            }
             $category->image = $path;
-        });
+        }
+       
 
         $category->title = $validated['title'];
         $category->save();

@@ -6,6 +6,7 @@
     
         @if (! $orders->isEmpty())
         <h2>My Orders</h2>
+        <h3 class="message"><a href="{{ route('shop') }}">Shop now</a></h3 >
         <div style="overflow-x: auto">
             <table style="width: 100%;min-width:450px" cellspacing="0">
                 <thead>

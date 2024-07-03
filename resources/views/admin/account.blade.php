@@ -16,11 +16,11 @@
         <div class="general">
             <div class="profile card">
                 <div>
-                    <img class="d-b" src="{{ asset('storage/avatar/admin.jpg') }}" alt="admin">
+                    <img class="d-b" src="{{ $user->image ? asset('storage/' . $user->image) : asset('storage/avatar/admin.jpg') }}" alt="user">
                     <p>{{ $user->full_name }}</p>
                 </div>
             </div>
-            <form class="details card" action="{{ route('admin.account.update') }}" method="POST">
+            <form class="details card" action="{{ route('admin.account.update') }}" method="POST" enctype="multipart/form-data">
                     @if (session('status'))
                         <p style="grid-column: span 2; color: rgb(20, 236, 20)">{{ session('status') }}</p>
                     @endif
@@ -32,6 +32,7 @@
                     @endif
 
                     @csrf
+                    <input type="file" name="profile_image" value="{{ $user->image }}">
                     <input type="text" name="first_name" placeholder="First name" value="{{ $user->first_name }}" required>
                     <input type="text" name="last_name" placeholder="Last name" value="{{ $user->last_name }}" required>
                     <input type="email" name="email" placeholder="Email" value="{{ $user->email }}" disabled>
