@@ -51,7 +51,7 @@
             </div>
             <div class="order_details">
                 <span>Total Amount</span>
-                <span>{{ $order->grand_total }}</span>
+                <span>Rp.{{ number_format($order->grand_total , 0, ',', '.') }}</span>
             </div>
             <div class="order_details">
                 <span>Order Status</span>
@@ -123,9 +123,9 @@
                                 </div>
                             </td>
                             <td>{{ $product->title }}</td>
-                            <td>${{ $product->price }}</td>
+                            <td>Rp.{{number_format($product->price , 0, ',', '.')  }}</td>
                             <td>{{ $product->pivot->quantity }}</td>
-                            <td>${{ $product->pivot->quantity * $product->price }}</td>
+                            <td>Rp.{{ number_format($product->pivot->quantity * $product->price , 0, ',', '.') }}</td>
                         </tr>
                     @endforeach
                 </table>

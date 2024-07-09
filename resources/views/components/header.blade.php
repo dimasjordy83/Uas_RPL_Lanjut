@@ -1,6 +1,7 @@
 <header>
     <nav class="flex_align _container">
-        <a class="logo-link d-b" href="{{ route('home') }}"><img class="d-b" src="{{ asset('img/logo.jpg') }}" alt="logo"></a>
+        <!-- <a class="logo-link d-b" href="{{ route('home') }}"><img class="d-b" src="{{ asset('img/logo.jpg') }}" alt="logo"></a> -->
+        <h2 style="color:white;">Dekor Apps</h2>
         <form class="ml-auto one-form" action="{{ route('shop') }}" method="GET">
             <input type="search" name="search" placeholder="Search for products..." value="{{ $search ?? '' }}">
             <button type="submit">
@@ -17,6 +18,7 @@
                     @endif
                 </a>
             </li>
+            
             <li class="space-lr">
                 <a class="notification-link" href="{{ route('cart') }}">
                     <span class="material-icons">shopping_cart</span>

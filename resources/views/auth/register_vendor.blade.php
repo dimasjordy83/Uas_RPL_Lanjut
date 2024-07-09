@@ -7,6 +7,9 @@
             <p style="color:red">{{ $error }}</p>
         @endforeach
     @endif
+    <h2 class="center" style="text-align:center;">
+        Regiter Vendor
+    </h2>
         <form action="{{ route('register_vendor') }}" method="POST" autocomplete="off">
             @csrf
             <label for="first_name">First Name</label><br>

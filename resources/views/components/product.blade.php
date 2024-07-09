@@ -2,6 +2,6 @@
     <div>
         <img src="{{ asset('storage/'.$product->image) }}" alt="{{ ucfirst($product->title) }}">
     </div>
-    <h3>{{ ucfirst($product->title) }}</h3>
-    <p>{{ "$".$product->price }}</p>
+    <h5 style="font-family: 'Roboto'">{{ ucfirst($product->title) }}</h5>
+    <p>{{ "Rp.".number_format($product->price) }}</p>
 </a>

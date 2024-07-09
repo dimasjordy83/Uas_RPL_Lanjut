@@ -5,6 +5,9 @@
     @if(session('status'))
         <p style="color:red">{{session("status")}}</p>
     @endif
+    <h2 class="center" style="text-align:center;">
+        Login
+    </h2>
         <form action="{{ route('login') }}" method="post" autocomplete="off">
             @csrf
             <label for="email">Email</label><br>

@@ -31,7 +31,7 @@
                                 </div>
                                 <div>
                                     <strong>ORD-{{ $order->id }}</strong><br>
-                                    <span>Total of ${{ $order->grand_total }}</span>
+                                    <span>Total of Rp.{{  number_format($order->grand_total , 0, ',', '.')}}</span>
                                 </div>
                             </div>
                         </td>

@@ -11,7 +11,7 @@
                     <img style="max-height: 350px; object-fit:cover; width: 250px" src="{{ asset('storage/'.$product->image) }}" alt="{{$product->title}}">
                     <div class="details">
                         <h1>{{ucfirst($product->title)}}</h1>
-                        <h2>{{"$".$product->price}}</h2>
+                        <h2>{{"Rp.".number_format($product->price)}}</h2>
                         <p>Category: {{$product->category->title}}</p>
                         <p>{{ $product->stock_quantity > 0 ? "In Stock" : "Out of Stock" }}</p>
                         <p>{{ucfirst($product->about)}}</p>

@@ -7,13 +7,13 @@
 
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 
-    <title>Beyond</title>
+    <title>Dekor Apps</title>
 </head>
 <body>
     <main>
         <div>
             <a id="logo" href="/">
-                <img src="{{ asset('img/b.png') }}" alt="logo">
+                <img src="{{ asset('img/da.png') }}" alt="logo">
             </a>
         </div>
 

@@ -12,7 +12,7 @@
     {{ $style ?? '' }}
     
     <link rel="shortcut icon" href="{{ asset('img/b.png') }}" />
-    <title>Beyond | Profile</title>
+    <title>Dekor Apps | Profile</title>
 
     <script src="{{ asset('js/user/utilities.js') }}" defer></script>
 
@@ -29,7 +29,7 @@
     <section style="margin-top: 1.5rem;" class="_container">
         <aside>
             <div class="profile_details">
-                <img class="d-b" src="{{ auth()->user()->image ? asset('storage/' . auth()->user()->image) : asset('storage/avatar/admin.jpg') }}" alt="user">
+                <img class="d-b"  src="{{ auth()->user()->image ? asset('storage/' . auth()->user()->image) : asset('storage/avatar/admin.jpg') }}" alt="user">
                 <div class="cloak">
                     <h2 class="m-0">{{ auth()->user()->full_name }}</h2>
                     <p class="m-0">{{ auth()->user()->email }}</p>

@@ -13,7 +13,7 @@
         {{ $style }}
 
     <link rel="shortcut icon" href="{{ asset('img/b.png') }}" />
-    <title>Beyond</title>
+    <title>Dekor Apps</title>
 
     <!-- scripts -->
     <script src="{{ asset('js/admin/utilities.js') }}" defer></script>        
@@ -33,9 +33,10 @@
 
     <nav>
         <span class="ham material-icons">menu</span>
-        <a id="nav_logo" class="d-b" href="#"><img class="fit_img" src="{{ asset('img/b.png') }}" alt="logo"></a>
+        <!-- <a id="nav_logo" class="d-b" href="#"><img class="fit_img" src="{{ asset('img/b.png') }}" alt="logo"></a> -->
+        <h2 style="color:white">Dekor Apps</h2>
         <div class="nav_admin">
-            <a href="{{ route('user.profile') }}">    <img class="fit_img admin_img" src="{{ auth()->user()->image ? asset('storage/' . auth()->user()->image) : asset('storage/avatar/admin.jpg') }}" alt="image">
+            <a href="{{ route('user.profile') }}">    <img class="fit_img admin_img" style="max-height:50px;max-width:50px;" src="{{ auth()->user()->image ? asset('storage/' . auth()->user()->image) : asset('storage/avatar/admin.jpg') }}" alt="image">
             </a>
         </div>
     </nav>

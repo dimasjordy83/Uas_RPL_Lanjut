@@ -61,7 +61,7 @@ a {
     color: black;
     border-radius: 5px;
 }
-.product_card div{
+.product_card div {
     display: grid;
     place-items: center;
     height: 190px;
@@ -87,10 +87,10 @@ a {
     width: fit-content;
     color: black;
     background-color: white;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-size: 1.2em;
     border: 1px solid black;
-    padding: .7em 1.2em;
+    padding: 0.7em 1.2em;
 }
 
 .cta:hover {
@@ -125,7 +125,7 @@ a {
 
 .one-form input {
     align-self: stretch;
-    padding: .5em 1em;
+    padding: 0.5em 1em;
     outline: none;
     border: none;
     width: 25rem;
@@ -159,7 +159,7 @@ a {
     place-items: center;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.651);
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .modal {
@@ -226,7 +226,7 @@ COMPONENTS-FOOTER
 
 footer {
     margin-top: 3rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: var(--head_col);
     color: white;
 }
@@ -250,8 +250,6 @@ footer .site-info {
 /* ============end
 COMPONENTS-FOOTER
 ============ */
-
-
 
 /*
 |--------------------------------------------------------------------------

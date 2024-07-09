@@ -72,23 +72,23 @@
                             <h2>Your Order</h2>
                             <div class="flex_align">
                                 <strong>Sub Total</strong>
-                                <span>${{ $subTotal }}</span>
+                                <span>Rp.{{ number_format($subTotal , 0, ',', '.')  }}</span>
                             </div>
                             <div class="flex_align">
                                 <strong>Discount</strong>
-                                <span>$0</span>
+                                <span>Rp.0</span>
                             </div>
                             <div class="flex_align">
                                 <strong>Tax</strong>
-                                <span>$0</span>
+                                <span>Rp.0</span>
                             </div>
                             <div class="flex_align">
                                 <strong>Shipping Cost</strong>
-                                <span>$0</span>
+                                <span>Rp.0</span>
                             </div>
                             <div class="flex_align">
                                 <h3>Total Cost</h3>
-                                <h3>${{ $subTotal }}</h3>
+                                <h3>Rp.{{ number_format($subTotal , 0, ',', '.')  }}</h3>
                             </div>
                         </div>
                     </div>

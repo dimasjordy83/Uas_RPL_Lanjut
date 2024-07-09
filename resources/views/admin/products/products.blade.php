@@ -37,7 +37,7 @@
                             </div>
                         </td>
                         <td>{{ ucfirst($product->title) }}</td>
-                        <td>{{ '$'.$product->price }}</td>
+                        <td>{{ 'Rp.'.number_format($product->price )}}</td>
                         <td>{{ $product->stock_quantity.' UNIT' }}</td>
                         <td>{{ $product->discount.'%' }}</td>
                         <td>

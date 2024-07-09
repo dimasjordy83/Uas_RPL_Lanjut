@@ -36,7 +36,8 @@
                                 </div>
                             </div>
                         </td>
-                        <td>${{ $transaction->order->grand_total }}</td>
+                        <td>Rp {{ number_format($transaction->order->grand_total, 0, ',', '.') }}</td>
+
                         <td>{{ $mode[$transaction->mode] }}</td>
                         <td><span style="background: {{$status[$transaction->status][1]}}" class="sm_card status">{{ $status[$transaction->status][0] }}</span></td>
                         <td><a href="{{ route('admin.orders.show', ['order' => $transaction->order->id]) }}">ORD-{{ $transaction->order->id }}</a></td>

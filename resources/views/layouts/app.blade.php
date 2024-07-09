@@ -12,8 +12,8 @@
     {{ $style }}
 
 
-    <link rel="shortcut icon" href="{{ asset('img/b.png') }}" />
-    <title>Beyond | Science shop</title>
+    <link rel="shortcut icon" href="{{ asset('img/da.png') }}" />
+    <title>Dekor Apps</title>
 
     <script src="{{ asset('js/utilities.js') }}" defer></script>
     {{ $js ?? '' }}
@@ -27,13 +27,9 @@
     {{ $slot }}
     {{-- main contents --}}
     <footer>
-        <div class="footer-links _container flex_align">
-            @each('components.temp', range(1, 4), 'link')
-        </div>
         <div class="site-info">
-            <a class="logo-link d-b" href="#"><img class="d-b" src="{{ asset('img/logo.jpg') }}"
-                    alt="logo"></a>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Kunal Saini !</p>
+        <h2 style="color:white;">Dekor Apps</h2>
+            <p>est 2024</p>
         </div>
     </footer>
 </body>
